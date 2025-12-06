@@ -1,0 +1,282 @@
+/* ===========================
+   OGÓLNE
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0d;
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===========================
+   MENU NA GÓRZE
+=========================== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #e10600;
+    color: white;
+}
+
+/* ===========================
+   STRONA 1 – ŻYCZENIA
+=========================== */
+.welcome-box {
+    text-align: center;
+    background: #111118;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.2);
+}
+
+.welcome-box h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #ff3131;
+}
+
+.welcome-box p {
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #222;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    border-color: #e10600;
+}
+
+
+.section {
+    background: #101018;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(255,0,0,0.15);
+}
+
+.section h2 {
+    color: #ff1a1a;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.section p {
+    color: #ccc;
+    font-size: 18px;
+}
+
+.f1-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+    font-size: 14px;
+}
+.small-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 25px;
+    text-align: center;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+
+.modal-content {
+    position: relative;
+    background: #111;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 640px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+}
+.close:hover {
+    color: white;
+}
+/* ===== SLIDER ===== */
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.slider-container img {
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #222;
+}
+
+.slider-container .prev,
+.slider-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 36px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    user-select: none;
+    transition: 0.3s;
+}
+
+.slider-container .prev:hover,
+.slider-container .next:hover {
+    background: rgba(225,0,0,0.8);
+}
+
+.slider-container .prev {
+    left: 10px;
+}
+
+.slider-container .next {
+    right: 10px;
+}
+.slider-container img,
+.gallery img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider-container img:hover,
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(225, 0, 0, 0.4);
+}
+.flash-line {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #e10600, #ff7a2d, #ffd24a);
+    border-radius: 2px;
+    margin: 10px 0 20px 0;
+    animation: slide 1.2s linear infinite;
+}
+
+@keyframes slide {
+    0% { background-position: 0 0; }
+    100% { background-position: 200% 0; }
+}
+.snowflake {
+    position: absolute;
+    top: -10px;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.8;
+    animation: fall 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+}
+#cat {
+    position: fixed; /* żeby kot poruszał się po ekranie */
+    width: 80px;     /* rozmiar kota */
+    left: 50px;      /* początkowa pozycja */
+    top: 50px;
+    z-index: 9999;   /* żeby był nad wszystkim */
+    transition: transform 0.1s linear; /* płynna rotacja */
+    pointer-events: none; /* żeby nie przeszkadzał w klikalności */
+}
+.animation-area {
+    position: relative;
+    width: 100%;
+    height: 400px; /* wysokość tej sekcji */
+    overflow: hidden;
+    background: #0a0a0d; /* dopasowane do reszty */
+}
+
+/* pojedyncza iskra */
+.spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #e10600;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: spark-move linear infinite;
+}
+
+/* ruch w dół z lekkim błądzeniem w bok */
+@keyframes spark-move {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(400px) translateX(50px);
+        opacity: 0;
+    }
+}
